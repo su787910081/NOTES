@@ -116,7 +116,8 @@
     如果想要获取一个git 的历史版本可以使用下面的命令
         这里面的history 是一个新建的分支名后面跟的是一个历史日志SHA 值 
             $ git branch history c6e1e96
-
+创建一个git 服务器仓库
+    $ git init --bare sample.git
 
 
 
