@@ -25,7 +25,35 @@ cmake 的自带变量
         # 其它的几个分别是：CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELEASE  CMAKE_CXX_FLAGS_RELWITHDEBINFO
       
 #####################################################################################################################
+    CMAKE_BUILD_TYPE:
+    
+        $ cmake -DCMAKE_BUILD_TYPE=Debug    ../source_code
 
+        IF (CMAKE_BUILD_TYPE MATCHES "Debug"
+                OR CMAKE_BUILD_TYPE MATCHES "None")
+            MESSAGE(STATUS "CMAKE_BUILD_TYPE is Debug")
+        ELSEIF (CMAKE_BUILD_TYPE MATCHES "Release")
+            MESSAGE(STATUS "CMAKE_BUILD_TYPE is Release")
+        ELSEIF (CMAKE_BUILD_TYPE MATCHES "RelWitchDebInfo")
+            MESSAGE(STATUS "CMAKE_BUILD_TYPE is RelWitchDebInfo")
+        ELSEIF (CMAKE_BUILD_TYPE MATCHES "MinSizeRel")
+            MESSAGE(STATUS "CMAKE_BUILD_TYPE is MinSizeRel")
+        ELSE ()
+            MESSAGE(STATUS "unknown CMAKE_BUILD_TYPE = " ${CMAKE_BUILD_TYPE})
+        ENDIF ()
+
+        通过指定 CMAKE_BUILD_TYPE 变数即可改变编译组态，预设的 CMAKE_BUILD_TYPE 是 None，即不加上任何额外编译选项。
+            内建的 CMAKE_BUILD_TYPE 支持以下几种组态：
+
+        None : 编译器预设值
+        Debug ： 产生除错资讯
+        Release ： 进行执行速度最佳化
+        RelWithDebInfo ： 进行执行速度最佳化，但仍然会启用 debug flag       ==> 忽略了assert() 但是会产生core 文件
+        MinSizeRel ： 进行程式码最小化
+        
+        特别地：MATCHES 这个匹配，如果将某个变量与"" 将全是绝对的真。即：无论什么值与"" 进行MATCHES 比较，都返回true。
+        特别地：MATCHES 这个匹配，如果将某个变量与"" 将全是绝对的真。即：无论什么值与"" 进行MATCHES 比较，都返回true。
+        特别地：MATCHES 这个匹配，如果将某个变量与"" 将全是绝对的真。即：无论什么值与"" 进行MATCHES 比较，都返回true。
 
 #####################################################################################################################
 
