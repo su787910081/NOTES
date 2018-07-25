@@ -1,0 +1,20 @@
+用法示例：
+
+    添加目标名后缀：
+        set(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "Set Debug library postfix" FORCE)
+        set(CMAKE_RELEASE_POSTFIX "" CACHE STRING "Set Release library postfix" FORCE)
+        set(CMAKE_MINSIZEREL_POSTFIX "" CACHE STRING "Set MinSizeRel library postfix" FORCE)
+        set(CMAKE_RelWithDebInfo_POSTFIX "" CACHE STRING "Set RelWithDebInfo library postfix" FORCE)
+        
+        # 为MFCDemo 项目添加DEBUG 版本后缀"d"
+        set_target_properties(MFCDemo PROPERTIES DEBUG_POSIFIX d)
+        
+    Wdinwos 系统的多核编译选项：
+        add_definitions(/MP)
+        
+        
+        
+        
+        
+        
+        
