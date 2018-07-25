@@ -12,6 +12,28 @@
     Wdinwos 系统的多核编译选项：
         add_definitions(/MP)
         
+    使用FIND_PACKAGE():
+        # 以添加BOOST  库为例：
+        SET(BOOST_PLATFORM_LIB_DIR ${CMAKE_SOURCE_DIR}/third/boost_1_55_0/linux64/lib/)
+
+        # boost library
+        SET(BOOST_INCLUDEDIR ${CMAKE_SOURCE_DIR}/third/boost_1_55_0/include/)
+        SET(BOOST_LIBRARYDIR ${BOOST_PLATFORM_LIB_DIR})
+        SET(Boost_USE_STATIC_LIBS ON)
+        SET(Boost_USE_MULTITHREADED ON)
+        UNSET(Boost_INCLUDE_DIR CACHE)
+        UNSET(Boost_LIBRARY_DIRS CACHE)
+        FIND_PACKAGE(Boost REQUIRED COMPONENTS thread program_options system)
+    
+        IF (Boost_FOUND)    # 成功找到boost 库，然后添加boost 库的头文件所在目录以及库的目录
+            INCLUDE_DIRECTORIES("${BOOST_INCLUDEDIR}")
+            SET(PLATFORM_LIBS ${PLATFORM_LIBS} ${Boost_LIBRARIES})
+            SET(PLATFORM_LIB_DIR ${PLATFORM_LIB_DIR} ${BOOST_PLATFORM_LIB_DIR})
+        ENDIF ()
+        
+        
+        
+        
         
         
         
