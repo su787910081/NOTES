@@ -1,5 +1,5 @@
 用法示例：
-
+#####################################################################################################################
     添加目标名后缀：
         set(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "Set Debug library postfix" FORCE)
         set(CMAKE_RELEASE_POSTFIX "" CACHE STRING "Set Release library postfix" FORCE)
