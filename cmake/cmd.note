@@ -1,0 +1,6 @@
+CMAKE 命令：
+    ADD_DEPENDENCIES: 
+        添加编译依赖，让一个顶层目标依赖于其他的顶层目标。
+        一个顶层目标是由命令ADD_EXECUTABLE，ADD_LIBRARY，或者ADD_CUSTOM_TARGET产生的目标。
+    
+    
