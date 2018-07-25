@@ -1,0 +1,3 @@
+cmake 的自带变量
+    CMAKE_CURRENT_LIST_DIR: 使用这个变量文件的所在位置的绝对路径。包括include() 包含进来的文件，CMAKE 也能识别该文件的所在路径。
+    
