@@ -87,9 +87,14 @@
     如果想要查看储藏的东西可以使用
         $ git stash list
     如果想要将储藏的代码重新应用，则可以使用
-        $ git stash apply [stash@{0}]
         最后的那一个参数为使用git stash list 列出来的储藏名称，
         如果多个的话就需要用它来区分了。
+        另外 ，apply 只是应用，使用list 查看 时储藏的记录还存在。
+            $ git stash apply [stash@{0}]
+        使用drop 来删除我们不用的储藏，或者应用过的储藏。
+            $ git stash drop
+        使用pop 可以应用的同时将其从栈上删除。
+            $ git stash pop    
     直接从储藏的代码创建一个分支
         $ git stash branch
     移除每一样东西，并存放到栈中
